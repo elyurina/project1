@@ -1,0 +1,222 @@
+#header{
+	background: $dark-blue;
+	color: $white;
+	position: relative;
+	> .container{
+		padding: 8px 68px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include media('<desktop') {
+			padding: 8px 20px;
+		}
+		@include media('<tablet') {
+			padding: 8px 10px;
+			align-items: flex-start;
+		}
+	} 
+}
+
+.nav-opener {
+  width:40px;
+  height:40px;
+  background: $yellow;
+  position:absolute;
+  right: 10px;
+  bottom: 10px;
+  border-radius:3px;
+  display: none;
+  z-index: 110;
+  @include media('<tablet') {
+  	display: block;
+  }
+ 
+  &:hover {
+    opacity:.9; 
+  }
+ 
+  .nav-active & {
+    span {
+      opacity: 0;
+    }
+    &:before,
+    &:after {
+      transform:rotate(45deg);
+      top:50%;
+      left:15%;
+      right:15%;
+    }
+    &:after {
+      transform:rotate(-45deg);
+    }
+  }
+ 
+  span,
+  &:before,
+  &:after {
+    background:#fff;
+    border-radius:4px;
+    position:absolute;
+    top:50%;
+    left:25%;
+    right:25%;
+    height:4px;
+    margin-top:-2px;
+    transition:all .3s linear;
+  }
+  &:before,
+  &:after {
+    content:'';
+    top:30%;
+  }
+  &:after {
+    top:70%;
+  }
+}
+
+.top-panel{
+	color: #22272f;
+	font: 14px/1.2 $add-font-sans-serif;
+	padding: 10px 0;
+	background: $white;
+	@include media('<tablet') {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 5px 0;
+		transform: translateX(100%);
+		transition: transform .5s linear 0s;
+		z-index: 100;
+		.nav-active &{
+			transform: translateX(0);
+		}
+		.resize-active &{
+			transition: none;
+		}
+	}
+	.container{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		@include media('<tablet') {
+			max-width: 280px;
+		}
+		> div{
+			display: flex;
+			align-items: center;
+			padding: 0 23px;
+			@include media('<desktop') {
+				padding: 0 12px;
+			}
+			[class^="icon-"], [class*=" icon-"] {
+				font-size: 18px;
+				color: $dark-blue;
+				margin: 0 10px 0 0;
+			}
+		}
+	}		
+	address{
+		font-style: normal;
+	}
+	a{
+		@extend %transition;
+		color: inherit;
+		text-decoration: none;
+		&:hover{
+			color: $yellow;
+		}
+	}
+}
+
+.main-nav{
+	@include media('<tablet') {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		transform: translateX(100%);
+		background: $dark-blue;
+		transition: transform .5s linear 0s;
+		z-index: 100;
+		.nav-active &{
+			transform: translateX(0);
+		}
+		.resize-active &{
+			transition: none;
+		}
+	}
+}
+
+#nav{
+	@extend %listreset;
+	display: flex;
+	justify-content: center;
+	font: 300 18px/1.2 $add-font-sans-serif;
+	@include media('<tablet') {
+		display: block;
+		text-align: center;
+		padding: 10px 0;
+	}
+	li{
+		padding: 0 45px;
+		@include media('<desktop') {
+			padding: 0 20px;
+		}
+		@include media('<tablet') {
+			padding: 15px;
+		}
+	}
+	a{
+		@extend %transition;
+		color: $white;
+		text-decoration: none;
+		&:hover{
+			color: $yellow;
+		}
+	}
+}
+
+.languages-block{
+	display: flex;
+	align-items: center;
+	.replace-btn{
+		@extend %transition;
+		font-size: 14px;
+		color: $yellow;
+		text-decoration: none;
+		margin: 3px 0 0 12px;
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+.languages-list{
+	@extend %listreset;
+	display: flex;
+	font: 14px/1.2 $base-font-sans-serif;
+	li{
+		padding: 0 2px 0 0;
+		&:first-child{
+			&:before{
+				content: "";
+			}
+		}
+		&:before{
+			content: "/";
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 2px;
+		}
+	}
+	a{
+		@extend %transition;
+		color: $white;
+		text-decoration: none;
+		&:hover{
+			color: $yellow;
+		}
+	}
+}
