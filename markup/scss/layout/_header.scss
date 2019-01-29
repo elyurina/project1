@@ -110,6 +110,10 @@
 			@include media('<desktop') {
 				padding: 0 12px;
 			}
+			@include media('<tablet') {
+				width: 100%;
+				justify-content: center;
+			}
 			[class^="icon-"], [class*=" icon-"] {
 				font-size: 18px;
 				color: $dark-blue;

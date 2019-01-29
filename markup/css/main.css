@@ -1238,6 +1238,13 @@ a:focus {
 }
 
 @media (max-width: 767px) {
+	.top-panel .container > div {
+		width: 100%;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+
 	.visual {
 		height: calc(100vh - 88px);
 	}
@@ -1390,4 +1397,4 @@ a:focus {
 		margin: 0 0 10px;
 	}
 }
-
+
