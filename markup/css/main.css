@@ -1280,6 +1280,12 @@ a:focus {
 		margin: 0 0 20px;
 	}
 
+	.items-holder h2 {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 0;
+	}
+
 	.twocolumns {
 		display: block;
 	}
