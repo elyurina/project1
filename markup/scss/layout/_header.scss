@@ -214,6 +214,11 @@
 			vertical-align: top;
 			margin: 0 2px;
 		}
+		&.active{
+			a{
+				color: $yellow;
+			}
+		}
 	}
 	a{
 		@extend %transition;

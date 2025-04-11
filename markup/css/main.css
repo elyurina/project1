@@ -959,6 +959,11 @@ a:focus {
 	margin: 0 2px;
 }
 
+.languages-list li.active a{
+	color: #e5aa34;
+	font-weight: bold;
+}
+
 .languages-list a {
 	color: #fff;
 	text-decoration: none;
