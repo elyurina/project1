@@ -3,6 +3,13 @@
 	position: relative;
 	width: 100%;	
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#main{
+	flex-grow: 5;
 }
 
 .container{
